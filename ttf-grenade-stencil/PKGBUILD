@@ -1,0 +1,21 @@
+# Maintainer: idbentley <ian.bentley at gmail dot com>
+pkgname=ttf-grenade-stencil
+pkgver=1
+pkgrel=1
+pkgdesc="A true type font by P.D. Magnus. Brushed, Distressed, Grunge, Rough"
+arch=(any)
+license=('Font Monkey License v1.00')
+url='http://www.dafont.com/grenade-stencil.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=grenade_stencil')
+install=$pkgname.install
+md5sums=('dcf718b685d9aac4cecee4deafd1fa7a')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+
+  install -Dm644 "${srcdir}/Read_Me.rtf" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
