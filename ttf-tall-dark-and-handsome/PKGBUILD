@@ -1,0 +1,21 @@
+# Maintainer: idbentley <ian.bentley at gmail dot com>
+pkgname=ttf-tall-dark-and-handsome
+pkgver=1
+pkgrel=1
+pkgdesc="A true type font by P.D. Magnus. Brushed, Distressed, Grunge, Rough"
+arch=(any)
+license=('Font Monkey License v1.00')
+url='http://www.dafont.com/tall-dark-and-hands.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=tall_dark_and_hands')
+install=$pkgname.install
+md5sums=('b6386c90ea6c6aa1fc884cec28de24bb')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+
+  install -Dm644 "${srcdir}/license.txt" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

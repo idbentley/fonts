@@ -1,0 +1,18 @@
+
+pkgname=octin-spraypaint-free
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url=''
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=octin_spraypaint_free')
+install=$pkgname.install
+md5sums=('017bcba12ffc826ffdd0a3b644f9fb5b')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+}

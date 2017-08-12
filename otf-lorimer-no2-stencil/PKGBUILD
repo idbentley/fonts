@@ -1,0 +1,18 @@
+# Maintainer: idbentley <ian.bentley at gmail dot com>
+pkgname=otf-lorimer-no2-stencil
+pkgver=1
+pkgrel=1
+pkgdesc="dafont font"
+arch=(any)
+license=('Font Monkey License v1.00')
+url='http://www.dafont.com/lorimer-no2-stencil.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=lorimer_no2_stencil')
+install=$pkgname.install
+md5sums=('17780c1926d3e0b21290d48ec4a18b0d')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/OTF/"
+  install -m644 "${srcdir}/"*.otf "${pkgdir}/usr/share/fonts/OTF/"
+}
