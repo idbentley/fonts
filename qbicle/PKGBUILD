@@ -1,0 +1,18 @@
+
+pkgname=qbicle
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/qbicle.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=qbicle')
+install=$pkgname.install
+md5sums=('adb91d7f1291ed6adf283263303a495e')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+}

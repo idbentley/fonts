@@ -1,0 +1,18 @@
+
+pkgname=granite-modern
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/granite-modern.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=granite_modern')
+install=$pkgname.install
+md5sums=('457b5490cdba4bc513a2b9840c681d7f')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+}

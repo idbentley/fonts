@@ -1,0 +1,18 @@
+
+pkgname=arcade-ya
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/arcade-ya.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=arcade_ya')
+install=$pkgname.install
+md5sums=('37fa5c95472d191ad55eaea2bd2f3f70')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.TTF "${pkgdir}/usr/share/fonts/TTF/"
+}

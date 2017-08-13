@@ -1,0 +1,19 @@
+
+pkgname=lcd-lcd-mono
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/lcd-lcd-mono.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=lcd_lcd_mono')
+install=$pkgname.install
+md5sums=('b04621155451dabe2408e8dcdae09cd0')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"LCDMonoWinTT/*.TTF "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"LCDWinTT/*.TTF "${pkgdir}/usr/share/fonts/TTF/"
+}

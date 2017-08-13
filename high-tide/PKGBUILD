@@ -1,0 +1,18 @@
+
+pkgname=high-tide
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/high-tide.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=high_tide')
+install=$pkgname.install
+md5sums=('44647267e2dd5b77ca59250ce28ccfef')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+}

@@ -1,0 +1,18 @@
+
+pkgname=better-together-caps
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/better-together-caps.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=better_together_caps')
+install=$pkgname.install
+md5sums=('487a423faed187a791f6a33f15ec8cdf')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+}
