@@ -1,0 +1,18 @@
+
+pkgname=exo2-stencil
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/exo2-stencil.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=exo2_stencil')
+install=$pkgname.install
+md5sums=('2018aed3b39cb53a4f20a1fd40c621fc')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF/"
+  install -m644 "${srcdir}/"*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+}
