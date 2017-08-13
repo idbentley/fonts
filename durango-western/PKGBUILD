@@ -1,0 +1,18 @@
+
+pkgname=durango-western
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/durango-western.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=durango_western')
+install=$pkgname.install
+md5sums=('00311ace47c8a23fc6f1cd0e6818bcfa')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/OTF/"
+  install -m644 "${srcdir}/"*.otf "${pkgdir}/usr/share/fonts/OTF/"
+}

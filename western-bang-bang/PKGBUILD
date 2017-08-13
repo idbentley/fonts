@@ -1,0 +1,18 @@
+
+pkgname=western-bang-bang
+pkgver=1
+pkgrel=1
+pkgdesc=""
+arch=(any)
+license=('')
+url='http://www.dafont.com/western-bang-bang.font'
+depends=('fontconfig' 'xorg-font-utils')
+source=('http://dl.dafont.com/dl/?f=western_bang_bang')
+install=$pkgname.install
+md5sums=('cce4ffd634ce9650231320544682a684')
+
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/OTF/"
+  install -m644 "${srcdir}/"*.otf "${pkgdir}/usr/share/fonts/OTF/"
+}
